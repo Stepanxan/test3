@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="/" class="navbar-brand"></a>
+
+      <div class="navbar-wrap">
+        <ul class="navbar-menu">
+            <li><a href="/all_post">Створити чек </a></li>
+            <li><a href="/admin">Панель адміністратора</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+  <nav>
+      {% if message %}
+        <p>{{ message }}</p>
+      {% endif %}
+
+<form method="post">
+  {% csrf_token %}
+  <label >Назва ресторану:</label>
+  <input type="text" name="name_point" required><br>
+  <label>Адресса:</label>
+  <input type="text" name="adress" required><br>
+  <input type="submit" value="Додати">
+</form>
+  </nav>
+  <nav>
+      {% if message %}
+        <p>{{ message }}</p>
+      {% endif %}
+
+<form method="post">
+  {% csrf_token %}
+  <label >Назва принтера:</label>
+  <input type="text" name="name" required><br>
+  <label>Тип чеку:</label>
+  <input type="text" name="check_type" required><br>
+  <input type="submit" value="Додати">
+</form>
+  </nav>
+</form>
+</body>
+</html>

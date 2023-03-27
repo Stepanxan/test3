@@ -1,0 +1,15 @@
+version: '3'
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: shop
+      POSTGRES_USER: stepan
+      POSTGRES_PASSWORD: 19982804
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+  redis:
+    image: redis:latest
+  #wkhtmltopdf:
+    #image: odaceo/wkhtmltopdf:0.12.6
+
